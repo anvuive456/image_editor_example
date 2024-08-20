@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "706332863660",
+    "project_id": "image-editor-b076c",
+    "storage_bucket": "image-editor-b076c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706332863660:android:290beca0e1047dbe844309",
+        "android_client_info": {
+          "package_name": "com.example.image_editor_example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyhwxGLAojmML_fBANFaNV7Kw_nApJAgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
