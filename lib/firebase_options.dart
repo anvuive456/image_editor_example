@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCyhwxGLAojmML_fBANFaNV7Kw_nApJAgk',
-    appId: '1:706332863660:android:290beca0e1047dbe844309',
-    messagingSenderId: '706332863660',
-    projectId: 'image-editor-b076c',
-    storageBucket: 'image-editor-b076c.appspot.com',
+    apiKey: 'AIzaSyAWgA2YKYtx71fXOnYROP_nSbJ2qg7ME8M',
+    appId: '1:471268233200:android:c80db10c5ca0bcb93a1735',
+    messagingSenderId: '471268233200',
+    projectId: 'image-editor-95a91',
+    storageBucket: 'image-editor-95a91.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB-cPv6Bbf2MDfumOnabtiow5_OOLBxmEc',
-    appId: '1:706332863660:ios:ed07e382df1fea51844309',
-    messagingSenderId: '706332863660',
-    projectId: 'image-editor-b076c',
-    storageBucket: 'image-editor-b076c.appspot.com',
+    apiKey: 'AIzaSyDqLjz9ACN_yh6hNDLZGvF7EApNOYoVzMY',
+    appId: '1:471268233200:ios:3f85d540e93d43c63a1735',
+    messagingSenderId: '471268233200',
+    projectId: 'image-editor-95a91',
+    storageBucket: 'image-editor-95a91.appspot.com',
     iosBundleId: 'com.example.imageEditorExample',
   );
 }

@@ -52,44 +52,45 @@ class _MainScreenState extends State<MainScreen> {
               user ??= snapshot.requireData;
 
               return StreamBuilder(
-                  stream: firestore
-                      .collection('images')
-                      .doc(snapshot.requireData?.uid ?? '')
-                      .snapshots(
-                        includeMetadataChanges: true,
-                      ),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(
-                        child: CircularProgressIndicator.adaptive(),
-                      );
-                    }
-
-                    final fields = snapshot.requireData;
-                    final keys = fields.data()?.keys.toList() ?? [];
-                    return GridView.builder(
-                      itemCount: keys.length,
-                      itemBuilder: (context, index) {
-                        final key = keys[index];
-                        final url = fields.data()?[key] ?? '';
-                        return GestureDetector(
-                          onTap: () async {
-                            _itemtapped(url,fields);
-                          },
-                          child: Image.network(
-                            url,
-                            fit: BoxFit.cover,
-                          ),
-                        );
-                      },
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        mainAxisSpacing: 20,
-                        crossAxisSpacing: 10,
-                      ),
+                stream: firestore
+                    .collection('images')
+                    .doc(snapshot.requireData?.uid ?? '')
+                    .snapshots(
+                      includeMetadataChanges: true,
+                    ),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                      child: CircularProgressIndicator.adaptive(),
                     );
-                  });
+                  }
+
+                  final fields = snapshot.requireData;
+                  final keys = fields.data()?.keys.toList() ?? [];
+                  return GridView.builder(
+                    itemCount: keys.length,
+                    itemBuilder: (context, index) {
+                      final key = keys[index];
+                      final url = fields.data()?[key] ?? '';
+                      return GestureDetector(
+                        onTap: () async {
+                          _itemtapped(url, fields);
+                        },
+                        child: Image.network(
+                          url,
+                          fit: BoxFit.cover,
+                        ),
+                      );
+                    },
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 20,
+                      crossAxisSpacing: 10,
+                    ),
+                  );
+                },
+              );
             },
           ),
         ),
@@ -154,7 +155,8 @@ class _MainScreenState extends State<MainScreen> {
     }
   }
 
-  void _itemtapped(String url, DocumentSnapshot<Map<String, dynamic>> fields) async {
+  void _itemtapped(
+      String url, DocumentSnapshot<Map<String, dynamic>> fields) async {
     try {
       loading.value = true;
       final ref = storage.refFromURL(url);
@@ -166,7 +168,6 @@ class _MainScreenState extends State<MainScreen> {
         );
         if (image != null) {
           await ref.putData(image);
-
         }
       }
     } catch (e) {
